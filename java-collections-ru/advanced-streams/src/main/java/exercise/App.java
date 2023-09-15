@@ -17,7 +17,6 @@ public class App {
                 .filter(str -> str.contains("X_FORWARDED_"))
                 .map(str -> str.replaceAll("X_FORWARDED_", "")
                         .replaceAll("environment=", "")
-                        .replaceAll(",", "")
                         .replaceAll("\"", ""))
                 .collect(Collectors.joining(","));
     }
